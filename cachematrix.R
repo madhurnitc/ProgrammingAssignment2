@@ -31,6 +31,11 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
+## This function computes the inverse of the square matrix
+## returned by makeCacheMatrix above. If the inverse has already 
+## been calculated (and the matrix has not changed), then the 
+## cachesolve should retrieve the inverse from the cache.
+
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
    
@@ -53,15 +58,3 @@ cacheSolve <- function(x, ...) {
    inverseMatrix
 }
 
-# Test
-# generate a random square, non-singular matrix
-test <- matrix(runif(9,1,100),3,3)
-# generate the makeCacheMatrix object with this matrix
-testCached <- makeCacheMatrix(test)
-# from now on calculate or retrieve calculated inversion using the cacheSolve function
-
-testInv <- cacheSolve(testCached)
-testInv <- cacheSolve(testCached)
-testInv <- cacheSolve(testCached)
-testInv <- cacheSolve(testCached)
-testInv <- cacheSolve(testCached)
